@@ -61,8 +61,7 @@ classifiers = [
 
 # Required dependencies ------------------------------------------------------------------------------------------------
 dependencies = [
-    "numpy>=1.23.0",
-    "numpy<2.0.0; sys_platform == 'darwin'", # macOS OpenVINO errors https://github.com/ultralytics/ultralytics/pull/17221
+    "numpy>=1.23.0,<=2.1.1", # OpenVINO and TFLite errors on '--slow' CI Tests https://github.com/ultralytics/ultralytics/pull/18943
     "matplotlib>=3.3.0",
     "opencv-python>=4.6.0",
     "pillow>=7.1.2",
@@ -88,6 +87,7 @@ dev = [
     "pytest-cov",
     "coverage[toml]",
     "mkdocs>=1.6.0",
+    "beautifulsoup4<=4.12.3",  # For docs https://github.com/ultralytics/ultralytics/pull/19067
     "mkdocs-material>=9.5.9",
     "mkdocstrings[python]",
     "mkdocs-redirects", # 301 redirects
